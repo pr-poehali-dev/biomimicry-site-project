@@ -22,11 +22,12 @@ const Navbar = () => {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link to="/">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              {/* Исправлено: вместо Link+NavigationMenuLink используем только NavigationMenuLink */}
+              <NavigationMenuLink asChild>
+                <Link to="/" className={navigationMenuTriggerStyle()}>
                   Главная
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
             
             <NavigationMenuItem>
@@ -47,19 +48,21 @@ const Navbar = () => {
             </NavigationMenuItem>
             
             <NavigationMenuItem>
-              <Link to="/applications">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              {/* Исправлено: вместо Link+NavigationMenuLink используем только NavigationMenuLink */}
+              <NavigationMenuLink asChild>
+                <Link to="/applications" className={navigationMenuTriggerStyle()}>
                   Применения
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
             
             <NavigationMenuItem>
-              <Link to="/about">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              {/* Исправлено: вместо Link+NavigationMenuLink используем только NavigationMenuLink */}
+              <NavigationMenuLink asChild>
+                <Link to="/about" className={navigationMenuTriggerStyle()}>
                   О проекте
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -82,7 +85,7 @@ const examples = [
     description: "Клюв зимородка вдохновил дизайн японских поездов-пуль",
   },
   {
-    title: "Энергоэффективные здания",
+    title: "Термитники и здания",
     description: "Термитники вдохновили архитекторов на создание зданий с пассивным охлаждением",
   },
 ];
