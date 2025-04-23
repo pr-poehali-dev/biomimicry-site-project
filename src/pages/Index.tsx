@@ -58,26 +58,45 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Featured Images Banner */}
-      <section className="py-10 overflow-hidden bg-biomimicry-green-medium/10">
+      {/* Image Gallery */}
+      <section className="py-10 bg-biomimicry-green-medium/10">
         <div className="container mx-auto">
           <h2 className="text-2xl font-bold text-biomimicry-green-dark mb-6 text-center">Удивительные примеры биомимикрии</h2>
-          <div className="flex space-x-6 overflow-x-scroll pb-6 hide-scrollbar">
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {featuredImages.map((image, index) => (
-              <div key={index} className="min-w-[300px] h-64 rounded-lg overflow-hidden shadow-md flex-shrink-0">
+              <div key={index} className="rounded-lg overflow-hidden shadow-md transition-all hover:shadow-xl">
                 <img 
-                  src={image.src} 
+                  src="/placeholder.svg" 
                   alt={image.alt} 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
+                <div className="p-2 bg-white text-xs text-biomimicry-green-dark font-medium">
+                  {image.alt}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
       
+      {/* Visual Banner */}
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="/placeholder.svg" alt="Природные структуры" className="w-full h-full object-cover opacity-20" />
+        </div>
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-biomimicry-green-dark mb-4">Вдохновение от природы</h2>
+            <p className="text-lg text-biomimicry-green-dark/80">
+              Природа создала идеальный баланс между эффективностью, устойчивостью и красотой. Мы учимся у неё создавать технологии будущего.
+            </p>
+          </div>
+        </div>
+      </section>
+      
       {/* Examples */}
-      <section className="py-16 px-4 bg-biomimicry-green-light/10">
+      <section className="py-16 px-4 bg-white">
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-12">
             <h2 className="text-3xl font-bold text-biomimicry-green-dark">Примеры из природы</h2>
@@ -92,9 +111,28 @@ const Index = () => {
                 key={example.title}
                 title={example.title}
                 description={example.description}
-                image={example.image}
+                image="/placeholder.svg"
                 category={example.category}
               />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Additional Image Showcase */}
+      <section className="py-12 bg-biomimicry-green-light/30">
+        <div className="container mx-auto">
+          <h2 className="text-2xl font-bold text-biomimicry-green-dark mb-8 text-center">Галерея биомимикрии</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {additionalImages.map((item, index) => (
+              <div key={index} className="rounded-lg overflow-hidden bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="/placeholder.svg" alt={item.title} className="w-full h-48 object-cover" />
+                <div className="p-4">
+                  <h3 className="font-medium text-biomimicry-green-dark mb-1">{item.title}</h3>
+                  <p className="text-sm text-slate-600">{item.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -181,27 +219,50 @@ const principles = [
 const featuredImages = [
   {
     src: "/placeholder.svg", 
-    alt: "Структура листа лотоса под микроскопом"
+    alt: "Структура листа лотоса"
   },
   {
     src: "/placeholder.svg", 
-    alt: "Крыло бабочки с микроструктурой"
+    alt: "Крыло бабочки"
   },
   {
     src: "/placeholder.svg", 
-    alt: "Термитник с естественной вентиляцией"
+    alt: "Термитник"
   },
   {
     src: "/placeholder.svg", 
-    alt: "Скоростной поезд, вдохновленный зимородком"
+    alt: "Скоростной поезд"
   },
   {
     src: "/placeholder.svg", 
-    alt: "Геккон, прикрепляющийся к поверхности"
+    alt: "Геккон"
   },
   {
     src: "/placeholder.svg", 
-    alt: "Акулья кожа с антибактериальными свойствами"
+    alt: "Акулья кожа"
+  }
+];
+
+const additionalImages = [
+  {
+    title: "Паутина паука",
+    description: "Паутина в 5 раз прочнее стали и вдохновляет создание сверхпрочных материалов.",
+    src: "/placeholder.svg",
+  },
+  {
+    title: "Крылья стрекозы",
+    description: "Аэродинамика крыльев стрекозы помогает создавать более эффективные ветряные турбины.",
+    src: "/placeholder.svg",
+  },
+  {
+    title: "Морские раковины",
+    description: "Структура раковин помогает создавать прочные и легкие строительные материалы.",
+    src: "/placeholder.svg",
+  },
+  {
+    title: "Цветок лотоса",
+    description: "Самоочищающиеся свойства листьев лотоса применяются в современных материалах.",
+    src: "/placeholder.svg",
   }
 ];
 
