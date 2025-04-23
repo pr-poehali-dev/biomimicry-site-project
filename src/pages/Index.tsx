@@ -1,28 +1,28 @@
 import Navbar from "@/components/Navbar";
 import BiomimicryCard from "@/components/BiomimicryCard";
 import { Button } from "@/components/ui/button";
-import { Leaf, Bird, Building, Waves, ChevronRight } from "lucide-react";
+import { Leaf, Bird, Building, Waves, ChevronRight, Droplet, PawPrint, Wind } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-biomimicry-blue-light/10">
+    <div className="min-h-screen flex flex-col bg-biomimicry-green-light/10">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-biomimicry-blue-light/30 relative overflow-hidden">
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-biomimicry-green-light/30 relative overflow-hidden">
         <div className="container mx-auto relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-biomimicry-blue-dark mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-biomimicry-green-dark mb-4">
               Природа — лучший инженер
             </h1>
             <p className="text-xl text-slate-600 mb-8">
               Биомимикрия — это подход к инновациям, который ищет устойчивые решения человеческих проблем, подражая проверенным временем моделям и стратегиям природы.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-biomimicry-blue-medium hover:bg-biomimicry-blue-dark text-white">
+              <Button className="bg-biomimicry-green-medium hover:bg-biomimicry-green-dark text-white">
                 Узнать больше
               </Button>
-              <Button variant="outline" className="border-biomimicry-blue-medium text-biomimicry-blue-medium hover:bg-biomimicry-blue-light hover:text-biomimicry-blue-dark">
+              <Button variant="outline" className="border-biomimicry-green-medium text-biomimicry-green-medium hover:bg-biomimicry-green-light hover:text-biomimicry-green-dark">
                 Примеры биомимикрии
               </Button>
             </div>
@@ -30,15 +30,15 @@ const Index = () => {
         </div>
         
         {/* Decorative elements */}
-        <div className="absolute right-0 top-1/4 w-64 h-64 bg-biomimicry-blue-light rounded-full opacity-30 animate-float blur-3xl"></div>
-        <div className="absolute -left-20 top-3/4 w-80 h-80 bg-biomimicry-blue-medium/20 rounded-full animate-float blur-3xl" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute right-0 top-1/4 w-64 h-64 bg-biomimicry-green-light rounded-full opacity-30 animate-float blur-3xl"></div>
+        <div className="absolute -left-20 top-3/4 w-80 h-80 bg-biomimicry-green-medium/20 rounded-full animate-float blur-3xl" style={{ animationDelay: '2s' }}></div>
       </section>
       
       {/* What is Biomimicry */}
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-biomimicry-blue-dark mb-4">Что такое биомимикрия?</h2>
+            <h2 className="text-3xl font-bold text-biomimicry-green-dark mb-4">Что такое биомимикрия?</h2>
             <p className="text-slate-600 max-w-3xl mx-auto">
               Биомимикрия — это наука и искусство подражания природным стратегиям и моделям для решения человеческих проблем. Природа за 3,8 миллиарда лет эволюции разработала эффективные и устойчивые решения.
             </p>
@@ -46,11 +46,11 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             {principles.map((principle) => (
-              <div key={principle.title} className="bg-biomimicry-blue-light/20 p-6 rounded-lg hover:shadow-md transition-shadow">
+              <div key={principle.title} className="bg-biomimicry-green-light/20 p-6 rounded-lg hover:shadow-md transition-shadow">
                 <div className="bg-white p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
                   {principle.icon}
                 </div>
-                <h3 className="text-xl font-medium text-biomimicry-blue-dark mb-2">{principle.title}</h3>
+                <h3 className="text-xl font-medium text-biomimicry-green-dark mb-2">{principle.title}</h3>
                 <p className="text-slate-600">{principle.description}</p>
               </div>
             ))}
@@ -58,12 +58,30 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Featured Images Banner */}
+      <section className="py-10 overflow-hidden bg-biomimicry-green-medium/10">
+        <div className="container mx-auto">
+          <h2 className="text-2xl font-bold text-biomimicry-green-dark mb-6 text-center">Удивительные примеры биомимикрии</h2>
+          <div className="flex space-x-6 overflow-x-scroll pb-6 hide-scrollbar">
+            {featuredImages.map((image, index) => (
+              <div key={index} className="min-w-[300px] h-64 rounded-lg overflow-hidden shadow-md flex-shrink-0">
+                <img 
+                  src={image.src} 
+                  alt={image.alt} 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       {/* Examples */}
-      <section className="py-16 px-4 bg-biomimicry-blue-light/10">
+      <section className="py-16 px-4 bg-biomimicry-green-light/10">
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-3xl font-bold text-biomimicry-blue-dark">Примеры из природы</h2>
-            <Button variant="ghost" className="text-biomimicry-blue-medium hover:text-biomimicry-blue-dark flex items-center gap-1">
+            <h2 className="text-3xl font-bold text-biomimicry-green-dark">Примеры из природы</h2>
+            <Button variant="ghost" className="text-biomimicry-green-medium hover:text-biomimicry-green-dark flex items-center gap-1">
               Все примеры <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
@@ -82,41 +100,53 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Nature Inspiration Quote */}
+      <section className="py-20 bg-biomimicry-green-dark text-white">
+        <div className="container mx-auto text-center">
+          <blockquote className="max-w-3xl mx-auto">
+            <p className="text-2xl md:text-3xl italic font-light mb-6">
+              "Нам нужно смотреть на природу как на модель, меру и наставника."
+            </p>
+            <footer className="text-biomimicry-green-light">— Джанин Бенюс, автор книги "Биомимикрия"</footer>
+          </blockquote>
+        </div>
+      </section>
+      
       {/* Footer */}
-      <footer className="bg-biomimicry-blue-dark text-white py-10 px-4">
+      <footer className="bg-biomimicry-green-dark text-white py-10 px-4">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between gap-8">
             <div className="max-w-xs">
               <div className="flex items-center gap-2 mb-4">
-                <Leaf className="h-6 w-6 text-biomimicry-blue-medium" />
+                <Leaf className="h-6 w-6 text-biomimicry-green-medium" />
                 <span className="font-bold text-xl">Биомимикрия</span>
               </div>
-              <p className="text-biomimicry-blue-light text-sm">
+              <p className="text-biomimicry-green-light text-sm">
                 Вдохновляйтесь природой для создания устойчивых решений будущего.
               </p>
             </div>
             
             <div>
-              <h4 className="font-medium mb-4 text-biomimicry-blue-light">Навигация</h4>
+              <h4 className="font-medium mb-4 text-biomimicry-green-light">Навигация</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="/" className="hover:text-biomimicry-blue-medium transition-colors">Главная</a></li>
-                <li><a href="#" className="hover:text-biomimicry-blue-medium transition-colors">Примеры</a></li>
-                <li><a href="#" className="hover:text-biomimicry-blue-medium transition-colors">Применения</a></li>
-                <li><a href="#" className="hover:text-biomimicry-blue-medium transition-colors">О проекте</a></li>
+                <li><a href="/" className="hover:text-biomimicry-green-medium transition-colors">Главная</a></li>
+                <li><a href="#" className="hover:text-biomimicry-green-medium transition-colors">Примеры</a></li>
+                <li><a href="#" className="hover:text-biomimicry-green-medium transition-colors">Применения</a></li>
+                <li><a href="#" className="hover:text-biomimicry-green-medium transition-colors">О проекте</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-medium mb-4 text-biomimicry-blue-light">Ресурсы</h4>
+              <h4 className="font-medium mb-4 text-biomimicry-green-light">Ресурсы</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-biomimicry-blue-medium transition-colors">Книги</a></li>
-                <li><a href="#" className="hover:text-biomimicry-blue-medium transition-colors">Исследования</a></li>
-                <li><a href="#" className="hover:text-biomimicry-blue-medium transition-colors">Видео</a></li>
+                <li><a href="#" className="hover:text-biomimicry-green-medium transition-colors">Книги</a></li>
+                <li><a href="#" className="hover:text-biomimicry-green-medium transition-colors">Исследования</a></li>
+                <li><a href="#" className="hover:text-biomimicry-green-medium transition-colors">Видео</a></li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-biomimicry-blue-medium/30 mt-8 pt-8 text-center text-sm text-biomimicry-blue-light/70">
+          <div className="border-t border-biomimicry-green-medium/30 mt-8 pt-8 text-center text-sm text-biomimicry-green-light/70">
             © 2023 Биомимикрия. Все права защищены.
           </div>
         </div>
@@ -129,23 +159,50 @@ const principles = [
   {
     title: "Подражание природе",
     description: "Изучение природных моделей и систем для применения их принципов в решении человеческих проблем.",
-    icon: <Leaf className="h-6 w-6 text-biomimicry-blue-medium" />,
+    icon: <Leaf className="h-6 w-6 text-biomimicry-green-medium" />,
   },
   {
     title: "Экологическая адаптация",
     description: "Создание дизайнов, которые адаптируются к изменяющимся условиям, как это делают живые организмы.",
-    icon: <Bird className="h-6 w-6 text-biomimicry-blue-medium" />,
+    icon: <Bird className="h-6 w-6 text-biomimicry-green-medium" />,
   },
   {
     title: "Устойчивое развитие",
     description: "Разработка систем, которые экономят ресурсы и энергию, минимизируя отходы и загрязнение.",
-    icon: <Building className="h-6 w-6 text-biomimicry-blue-medium" />,
+    icon: <Building className="h-6 w-6 text-biomimicry-green-medium" />,
   },
   {
     title: "Эффективность ресурсов",
     description: "Оптимизация использования материалов и энергии путем наблюдения за эффективностью природных систем.",
-    icon: <Waves className="h-6 w-6 text-biomimicry-blue-medium" />,
+    icon: <Waves className="h-6 w-6 text-biomimicry-green-medium" />,
   },
+];
+
+const featuredImages = [
+  {
+    src: "/placeholder.svg", 
+    alt: "Структура листа лотоса под микроскопом"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Крыло бабочки с микроструктурой"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Термитник с естественной вентиляцией"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Скоростной поезд, вдохновленный зимородком"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Геккон, прикрепляющийся к поверхности"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Акулья кожа с антибактериальными свойствами"
+  }
 ];
 
 const examples = [
@@ -166,6 +223,24 @@ const examples = [
     description: "Термитники поддерживают стабильную внутреннюю температуру и вентиляцию, несмотря на экстремальные колебания температуры снаружи. Архитекторы используют эти принципы для проектирования зданий с пассивной вентиляцией и системами кондиционирования, которые значительно снижают потребление энергии. Здание Eastgate Centre в Зимбабве — яркий пример такой биомиметической архитектуры.",
     image: "/placeholder.svg",
     category: "Архитектура",
+  },
+  {
+    title: "Кожа акулы и гидродинамика",
+    description: "Микроскопическая структура кожи акулы состоит из маленьких зубчатых чешуек, которые снижают сопротивление воды и предотвращают прикрепление бактерий. Эта особенность вдохновила создание специальных тканей для плавательных костюмов, сокращающих сопротивление воды, а также антибактериальных поверхностей для медицинских учреждений.",
+    image: "/placeholder.svg",
+    category: "Материалы",
+  },
+  {
+    title: "Лапы геккона и адгезивы",
+    description: "Геккон может подниматься по гладким вертикальным поверхностям и даже ходить по потолку благодаря миллионам микроскопических щетинок на лапах. Эти щетинки используют межмолекулярные силы Ван-дер-Ваальса для прикрепления к поверхностям. Ученые создали аналогичные адгезивы, которые не теряют свойства после многократного использования и не оставляют следов.",
+    image: "/placeholder.svg",
+    category: "Технологии",
+  },
+  {
+    title: "Глаз мотылька и антибликовые покрытия",
+    description: "Глаза ночных мотыльков покрыты наноструктурами, которые минимизируют отражение света, позволяя мотылькам видеть в темноте и оставаться незаметными для хищников. Эти наноструктуры вдохновили создание высокоэффективных антибликовых покрытий для солнечных панелей, дисплеев и объективов камер, что значительно улучшает их характеристики.",
+    image: "/placeholder.svg",
+    category: "Оптика",
   },
 ];
 

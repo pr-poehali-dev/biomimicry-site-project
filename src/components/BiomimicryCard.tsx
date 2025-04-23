@@ -25,12 +25,12 @@ const BiomimicryCard = ({
           alt={title}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
         />
-        <div className="absolute top-3 right-3 bg-biomimicry-blue-medium text-white text-xs font-medium px-2 py-1 rounded">
+        <div className="absolute top-3 right-3 bg-biomimicry-green-medium text-white text-xs font-medium px-2 py-1 rounded">
           {category}
         </div>
       </div>
       <CardHeader>
-        <CardTitle className="text-biomimicry-blue-dark">{title}</CardTitle>
+        <CardTitle className="text-biomimicry-green-dark">{title}</CardTitle>
         <CardDescription className="text-slate-500">{description.slice(0, 80)}...</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
@@ -39,7 +39,7 @@ const BiomimicryCard = ({
       <CardFooter>
         <Button 
           variant="ghost" 
-          className="text-biomimicry-blue-medium hover:text-biomimicry-blue-dark hover:bg-biomimicry-blue-light flex items-center gap-1"
+          className="text-biomimicry-green-medium hover:text-biomimicry-green-dark hover:bg-biomimicry-green-light flex items-center gap-1"
           asChild
         >
           <a href={readMoreLink}>

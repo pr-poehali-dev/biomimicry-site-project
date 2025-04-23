@@ -63,13 +63,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				biomimicry: {
-					blue: {
-						light: '#D3E4FD',
-						medium: '#0EA5E9',
-						dark: '#1A3E61'
+					green: {
+						light: '#E6F7EC',
+						medium: '#2E8B57',
+						dark: '#1B4D33'
 					},
 					white: '#FFFFFF',
-					offWhite: '#F1F0FB'
+					offWhite: '#F7FAF9'
 				}
 			},
 			borderRadius: {

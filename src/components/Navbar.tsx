@@ -14,15 +14,14 @@ const Navbar = () => {
   return (
     <header className="w-full bg-white shadow-sm">
       <div className="container mx-auto flex justify-between items-center py-4">
-        <Link to="/" className="flex items-center gap-2 text-biomimicry-blue-dark font-bold text-xl">
-          <Leaf className="h-6 w-6 text-biomimicry-blue-medium" />
+        <Link to="/" className="flex items-center gap-2 text-biomimicry-green-dark font-bold text-xl">
+          <Leaf className="h-6 w-6 text-biomimicry-green-medium" />
           <span>Биомимикрия</span>
         </Link>
 
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              {/* Исправлено: вместо Link+NavigationMenuLink используем только NavigationMenuLink */}
               <NavigationMenuLink asChild>
                 <Link to="/" className={navigationMenuTriggerStyle()}>
                   Главная
@@ -37,9 +36,9 @@ const Navbar = () => {
                   {examples.map((example) => (
                     <div
                       key={example.title}
-                      className="p-4 hover:bg-biomimicry-blue-light rounded-md transition-colors"
+                      className="p-4 hover:bg-biomimicry-green-light rounded-md transition-colors"
                     >
-                      <div className="font-medium text-biomimicry-blue-dark mb-1">{example.title}</div>
+                      <div className="font-medium text-biomimicry-green-dark mb-1">{example.title}</div>
                       <p className="text-sm text-muted-foreground">{example.description}</p>
                     </div>
                   ))}
@@ -48,7 +47,6 @@ const Navbar = () => {
             </NavigationMenuItem>
             
             <NavigationMenuItem>
-              {/* Исправлено: вместо Link+NavigationMenuLink используем только NavigationMenuLink */}
               <NavigationMenuLink asChild>
                 <Link to="/applications" className={navigationMenuTriggerStyle()}>
                   Применения
@@ -57,7 +55,6 @@ const Navbar = () => {
             </NavigationMenuItem>
             
             <NavigationMenuItem>
-              {/* Исправлено: вместо Link+NavigationMenuLink используем только NavigationMenuLink */}
               <NavigationMenuLink asChild>
                 <Link to="/about" className={navigationMenuTriggerStyle()}>
                   О проекте
